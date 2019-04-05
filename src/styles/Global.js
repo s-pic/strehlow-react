@@ -33,16 +33,6 @@ export default createGlobalStyle`
       position: relative;
    }
   
-  h2 {
-      font-family: "Pinyon Script", Helvetica, sans-serif;
-      font-size: 36px;
-      color: #fff;
-      
-      ${media.s`
-        margin-bottom: 24px;
-      `}
-  }
-  
   // router-transitions
   .fade-enter {
     opacity: 0.01;

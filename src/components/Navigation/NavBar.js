@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import { media } from '~/styles/Utils';
+import { media, breakpoints, isSmallScreen } from '~/styles/Utils';
 import {
   Collapse,
     Navbar,
     NavbarToggler,
     Nav,
     NavItem,
-    NavLink
+    NavLink,
+    NavbarBrand
 } from 'reactstrap';
 
 const StyledNavbar = styled(Navbar)`
@@ -40,8 +41,16 @@ const StyledNav = styled(Nav)`
    `}
 `;
 
-const StyledNavItem = styled(NavItem)`
+const StyledNavbarToggler = styled(NavbarToggler)`
+  background-color: rgba(255,255,255,0.2);
   
+  &&:focus {
+    outline: none;
+  }
+`;
+
+const StyledNavBarBrand = styled.h2`
+  color: #fff;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -87,13 +96,15 @@ class NavBar extends Component {
 
     render() {
         const { entries, location } = this.props;
+        const _isSmallScreen = isSmallScreen();
         return (
-          <StyledNavbar color="transparent" light expand="md" fixed="top">
-            <NavbarToggler onClick={this.toggle} />
+          <StyledNavbar color="transparent" light expand="md" fixed={_isSmallScreen ? 'undefined' : 'top'}>
+            {_isSmallScreen && (<StyledNavBarBrand to={config.nav.Home} tag={Link} className="mr-auto">StrehlowWeb</StyledNavBarBrand>)}
+            <StyledNavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <StyledNav>
                 {entries.map(entry => (
-                  <StyledNavItem key={`navitem-${entry.label}`}>
+                  <NavItem key={`navitem-${entry.label}`}>
                     <StyledNavLink
                       tag={Link}
                       to={entry.route}
@@ -101,7 +112,7 @@ class NavBar extends Component {
                     >
                       {entry.label}
                     </StyledNavLink>
-                  </StyledNavItem>
+                  </NavItem>
                       ))}
               </StyledNav>
             </Collapse>

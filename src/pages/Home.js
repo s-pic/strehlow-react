@@ -11,6 +11,7 @@ const Wrapper = styled(Main)`
 
 const StyledHeading = styled.h1`
   margin-bottom: 1em;
+  text-align: center;
   
   ${media.s`
      font-size: 28px;

@@ -21,6 +21,14 @@ export const media = {
   l: getMediaQuery(breakpoints.l)
 };
 
+export function matchMediaSize(size) {
+  return window.matchMedia(`(min-width: ${size}px)`).matches;
+}
+
+export function isSmallScreen() {
+  return window.matchMedia(`screen and (max-width: ${breakpoints.m}px)`).matches;
+}
+
 export default {
   getMediaQuery,
   breakpoints,
