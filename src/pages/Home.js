@@ -2,18 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { media } from '~/styles/Utils';
+import Main from '~/components/MainSection';
 import HomeImage from '~/images/bg/sky_big.jpg';
 
-const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
+const Wrapper = styled(Main)`
   background-image: url(${HomeImage});
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 const StyledHeading = styled.h1`

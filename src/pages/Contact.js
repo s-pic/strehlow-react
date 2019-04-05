@@ -1,23 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import Main from '~/components/MainSection';
 
-const MyInnerComponent = styled.div`
-  
+const Wrapper = styled(Main)`
+  background-color: #000;
 `;
 
-const MyComponent = ({ myProp }) => (
-  <MyInnerComponent>
+const StyledHeading = styled.h2`
+`;
+
+const Contact = () => (
+  <Wrapper>
     <h2>Contact</h2>
-  </MyInnerComponent>
+  </Wrapper>
 );
 
-MyComponent.propTypes = {
-    myProp: PropTypes.string
+Contact.propTypes = {
 };
 
-MyComponent.defaultProps = {
-    myProp: 'so'
+Contact.defaultProps = {
 };
 
-export default MyComponent;
+export default Contact;

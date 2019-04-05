@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { media } from '~/styles/Utils';
 import {
   Collapse,
@@ -53,6 +53,10 @@ const StyledNavLink = styled(NavLink)`
    color: white;
    opacity: 1;
   }
+  &.active {
+    opacity: 1;
+    border-bottom: 2px solid ${config.colors.lightGreen}
+  }
 `;
 
 class NavBar extends Component {
@@ -79,11 +83,10 @@ class NavBar extends Component {
         this.setState(prevState => ({
             isOpen: !prevState.isOpen
         }));
-    }
+    };
 
     render() {
-        const { entries } = this.props;
-
+        const { entries, location } = this.props;
         return (
           <StyledNavbar color="transparent" light expand="md" fixed="top">
             <NavbarToggler onClick={this.toggle} />
@@ -94,6 +97,7 @@ class NavBar extends Component {
                     <StyledNavLink
                       tag={Link}
                       to={entry.route}
+                      className={location.pathname === entry.route ? 'active' : ''}
                     >
                       {entry.label}
                     </StyledNavLink>
@@ -106,4 +110,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

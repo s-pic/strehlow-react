@@ -6,9 +6,9 @@
   },
   "nav": {
     "Home": "/home",
-    "Kontakt": "/kontakt",
     "Aktivitäten": "/was-geht",
-    "Impressionen": "/impressionen"
+    "Impressionen": "/impressionen",
+    "Kontakt": "/kontakt"
   },
   "colors": {
     "black:": "#171717",

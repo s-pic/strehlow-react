@@ -1,23 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import Main from '~/components/MainSection';
+import BgImage from '~/images/bg/astronomy-comet-constellation-631477.jpg';
 
-const MyInnerComponent = styled.div`
-  
+// TODO: add credits (Photo by Neale LaSalle from Pexels)
+const Wrapper = styled(Main)`
+  background-image: url(${BgImage});
 `;
 
-const MyComponent = ({ myProp }) => (
-  <MyInnerComponent>
+const Impressions = () => (
+  <Wrapper>
     <h2>Impressions</h2>
-  </MyInnerComponent>
+  </Wrapper>
 );
 
-MyComponent.propTypes = {
-    myProp: PropTypes.string
+Impressions.propTypes = {
 };
 
-MyComponent.defaultProps = {
-    myProp: 'so'
+Impressions.defaultProps = {
 };
 
-export default MyComponent;
+export default Impressions;

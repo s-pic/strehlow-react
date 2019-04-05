@@ -1,23 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import Main from '~/components/MainSection';
+import BgImage from '~/images/bg/sunset1.jpg';
 
-const MyInnerComponent = styled.div`
-  
+const Wrapper = styled(Main)`
+  background-image: url(${BgImage});
 `;
 
-const MyComponent = ({ myProp }) => (
-  <MyInnerComponent>
+const Activities = () => (
+  <Wrapper>
     <h2>Activities</h2>
-  </MyInnerComponent>
+  </Wrapper>
 );
 
-MyComponent.propTypes = {
-    myProp: PropTypes.string
+Activities.propTypes = {
 };
 
-MyComponent.defaultProps = {
-    myProp: 'so'
+Activities.defaultProps = {
 };
 
-export default MyComponent;
+export default Activities;
