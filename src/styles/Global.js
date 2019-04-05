@@ -24,6 +24,8 @@ export default createGlobalStyle`
     position: relative;
     font-family: Raleway, Helvetica, sans-serif;
     color: ${config.colors.black};
+    background-color: black;
+    overflow:hidden;
   }
   
    #root {
@@ -40,4 +42,23 @@ export default createGlobalStyle`
         margin-bottom: 24px;
       `}
   }
+  
+  // router-transitions
+  .fade-enter {
+    opacity: 0.01;
+  }
+
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit.fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }  
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Main from '~/components/MainSection';
 
 const Wrapper = styled(Main)`
-  background-color: #000;
+  background-color: ${config.colors.darkGrey};
 `;
 
 const StyledHeading = styled.h2`
