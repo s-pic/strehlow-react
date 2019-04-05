@@ -21,6 +21,7 @@ module.exports = (api) => {
   const env = {
     production: {
       plugins: [
+        "babel-plugin-transform-react-remove-prop-types",,
         [
           'babel-plugin-styled-components',
           {
