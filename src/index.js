@@ -8,7 +8,7 @@ import Store from '~/state/Store';
 import App from '~//App';
 import GlobalStyles from '~/styles/Global';
 
-const root = document.createElement('div');
+const root = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={Store}>

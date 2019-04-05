@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { media } from '~/styles/Utils';
 import {
   Collapse,
     Navbar,
@@ -11,14 +12,47 @@ import {
     NavLink
 } from 'reactstrap';
 
-const StyledNav = styled(Nav)`
-  
+const StyledNavbar = styled(Navbar)`
+
+ @keyframes blend-in {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+ }
+
+ animation: 1s blend-in 1s ease-out forwards;
+ transform: translateY(-100px);
+ opacity: 0;
+ justify-content: flex-end;
 `;
+
+const StyledNav = styled(Nav)`
+  width: 100%;
+  justify-content: flex-end;
+  
+  ${media.m`
+     justify-content: space-between;
+   `}
+  
+  ${media.l`
+     justify-content:flex-end;
+   `}
+`;
+
 const StyledNavItem = styled(NavItem)`
   
 `;
+
 const StyledNavLink = styled(NavLink)`
+  color: white;
+  transition: opacity 0.3s;
+  opacity: 0.7;
   
+  &&:hover {
+   color: white;
+   opacity: 1;
+  }
 `;
 
 class NavBar extends Component {
@@ -51,7 +85,7 @@ class NavBar extends Component {
         const { entries } = this.props;
 
         return (
-          <Navbar color="transparent" light expand="md">
+          <StyledNavbar color="transparent" light expand="md" fixed="top">
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <StyledNav>
@@ -67,7 +101,7 @@ class NavBar extends Component {
                       ))}
               </StyledNav>
             </Collapse>
-          </Navbar>
+          </StyledNavbar>
         );
     }
 }

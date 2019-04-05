@@ -9,5 +9,19 @@
     "Kontakt": "/kontakt",
     "Aktivitäten": "/was-geht",
     "Impressionen": "/impressionen"
+  },
+  "colors": {
+    "black:": "#171717",
+    "darkGrey": "#514D43",
+    "lightGreen": "#B2C951",
+    "fullGreen": "#304D1D",
+    "steelBlue": "#516D62",
+    "skyBlue": "#7C98A4"
+  },
+  "texts": {
+    "Home": {
+      "heading": "Willkommen in Strehlow",
+      "subheading": "Sport, Kultur, Wellness, Natur."
+    }
   }
 }

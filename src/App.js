@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'unistore/react';
+import Actions from '~/state/Actions';
 import styled from 'styled-components';
 import NavBar from '~/components/Navigation/NavBar';
-import Home from '~/pages/Home/Home';
-import Contact from '~/pages/Home/Contact';
-import Activities from '~/pages/Home/Activities';
-import Impressions from '~/pages/Home/Impressions';
-
-import Actions from '~/state/Actions';
+import Home from '~/pages/Home';
+import Contact from '~/pages/Contact';
+import Activities from '~/pages/Activities';
+import Impressions from '~/pages/Impressions';
 
 const AppWrapper = styled.div`
+  height: 100%;
+  width: 100%;
 `;
 
 class App extends PureComponent {
@@ -21,11 +22,20 @@ class App extends PureComponent {
           <AppWrapper>
             <NavBar entries={this.getNavEntries()} />
             <Switch>
-              <Route exact path={config.nav.Home} component={Home} />
+              <Route
+                exact
+                path={config.nav.Home}
+                render={() => (
+                  <Home
+                    heading={config.texts.Home.heading}
+                    subheading={config.texts.Home.subheading}
+                  />
+                  )}
+              />
               <Route exact path={config.nav.Kontakt} component={Contact} />
               <Route exact path={config.nav['Aktivitäten']} component={Activities} />
               <Route exact path={config.nav.Impressionen} component={Impressions} />
-              <Route path="/" render={() => (<Redirect to={config.nav.Home} />)} />
+              <Route exact path="/" render={() => (<Redirect to={config.nav.Home} />)} />
             </Switch>
           </AppWrapper>
         );

@@ -8,7 +8,7 @@ const MyInnerComponent = styled.div`
 
 const MyComponent = ({ myProp }) => (
   <MyInnerComponent>
-    <h1>Home</h1>
+    <h2>Contact</h2>
   </MyInnerComponent>
 );
 
