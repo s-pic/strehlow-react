@@ -7,6 +7,7 @@
   "description": "A website for family Schmidt and their magical place in Strehlow-Vorwerk",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.prod.js --colors",
+    "build-dev": "webpack --config webpack/webpack.config.dev.js --colors",
     "start": "webpack-dev-server --config webpack/webpack.config.dev.js"
   },
   "repository": {
