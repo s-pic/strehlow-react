@@ -4,7 +4,7 @@ I started the project using Ember.js which was appealing in the beginning but a 
 when it came to set up a proper component lifecycle for a Map component using third party libraries. 
 This is the old repo: https://github.com/geomC/strehlow-ember.
 
-So this is a Re-Start incorporating what I have learned developing for FixMyBerlin.
+Furthermore, this new start incorporates what I have learned developing for [FixMyBerlin](https://github.com/FixMyBerlin/fixmy.frontend).
 
 As development boiler plate, [webkid´s React Starterkit](https://github.com/wbkd/react-starter) is used, thanks guys!
 
