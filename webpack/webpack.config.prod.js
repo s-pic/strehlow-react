@@ -45,6 +45,20 @@ module.exports = merge(common, {
             }
           }
         ]
+      },
+      {
+        loader: 'babel-loader',
+        test: /\.(js|jsx)$/,
+        include: [
+          Path.resolve(__dirname, '../src'),
+          /**
+           * add ES6 modules that should be transpiled here. For example:
+           * Path.resolve(__dirname, '../node_modules/query-string'),
+           */
+        ],
+        options: {
+          envName: 'production'
+        }
       }
     ]
   }

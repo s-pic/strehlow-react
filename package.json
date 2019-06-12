@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "description": "A website for family Schmidt and their magical place in Strehlow-Vorwerk",
   "scripts": {
-    "build": "BABEL_ENV=production webpack --config webpack/webpack.config.prod.js --colors",
+    "build": "webpack --config webpack/webpack.config.prod.js --colors",
     "start": "webpack-dev-server --config webpack/webpack.config.dev.js"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "clean-webpack-plugin": "^2.0.1",
     "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.1",
