@@ -5,5 +5,8 @@
     publish = "build"
     command = "npm run build"
 
+[context.branch-deploy]
+    command = "npm run build-dev"
+
 [context.deploy-preview]
     command = "npm run build-dev"
