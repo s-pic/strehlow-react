@@ -15,7 +15,11 @@
     "template-curly-spacing" : "off",
     "indent": "off",
     "consistent-return": 0,
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "import/no-unresolved": ["error", {
+      "caseSensitive": false
+      }
+    ]
   },
   "env": {
     "browser": true
