@@ -1,6 +1,5 @@
 import styledNormalize from 'styled-normalize';
 import { createGlobalStyle } from 'styled-components';
-import { media } from '~/styles/Utils';
 
 export default createGlobalStyle`
   ${styledNormalize}
@@ -20,7 +19,7 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     height: 100%;
-    width: 100%
+    width: 100%;
     position: relative;
     font-family: Raleway, Helvetica, sans-serif;
     color: ${config.colors.black};
