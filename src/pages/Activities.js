@@ -6,10 +6,8 @@ import { media } from '~/styles/Utils';
 
 const Wrapper = styled(Main)`
   background-color: #171717;
-  width: 100vw;
-  height: 100vh;
   display: block;
-  overflow: scroll;
+  overflow: auto;
   
   ${media.s`
     padding: 82px 12px 12px 12px;
