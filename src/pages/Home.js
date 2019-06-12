@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { media } from '~/styles/Utils';
 import Main from '~/components/MainSection';
-import HomeImage from '~/images/bg/sky_big.jpg';
+import HomeImage from '~/images/bg/sky_big.JPG';
 
 const Wrapper = styled(Main)`
   background-image: url(${HomeImage});
