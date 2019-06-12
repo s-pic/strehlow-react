@@ -28,3 +28,9 @@ Builds a minified version of the application in the build folder.
 ```sh
 $ npm run build
 ```
+
+# CI
+
+[Netlfiy](https://www.netlify.com) is used for continious deployments.
+Production builds can be viewed at https://strehlow-uckermark.com,
+dev builds at https://development.strehlow-uckermark.com.
