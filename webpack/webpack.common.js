@@ -50,7 +50,7 @@ module.exports = {
         type: 'javascript/auto'
       },
       {
-        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
+        test: /\.(ico|jpg|JPG|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
         use: {
           loader: 'file-loader',
           options: {
