@@ -6,8 +6,8 @@ const Wrapper = styled(Main)`
   background-color: ${config.colors.darkGrey};
 `;
 
-const StyledHeading = styled.h2`
-`;
+// const StyledHeading = styled.h2`
+// `;
 
 const Contact = () => (
   <Wrapper>
