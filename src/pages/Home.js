@@ -7,6 +7,10 @@ import HomeImage from '~/images/bg/sky_big.jpg';
 
 const Wrapper = styled(Main)`
   background-image: url(${HomeImage});
+
+  ${media.l`
+    background-position: 50% 75%;
+  `}
 `;
 
 const StyledHeading = styled.h1`
