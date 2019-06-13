@@ -39,11 +39,22 @@ const StyledTransitionGroup = styled(TransitionGroup)`
 class App extends PureComponent {
   getNavEntries = () => Object.keys(config.nav).map(label => ({ label, route: config.nav[label] }));
 
+  getSectionTitle = () => {
+      const currentRoute = this.props.location.pathname;
+
+      return currentRoute === '/home'
+        ? config.meta.title
+      : Object.keys(config.nav).find(key => config.nav[key] === currentRoute);
+  }
+
   render() {
     const { location } = this.props;
     return (
       <AppWrapper>
-        <NavBar entries={this.getNavEntries()} />
+        <NavBar
+          entries={this.getNavEntries()}
+          title={this.getSectionTitle()}
+        />
         <StyledTransitionGroup>
           <CSSTransition
             key={location.key}

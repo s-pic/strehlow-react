@@ -9,9 +9,7 @@ const Wrapper = styled(Main)`
 `;
 
 const Impressions = () => (
-  <Wrapper>
-    <h2>Impressions</h2>
-  </Wrapper>
+  <Wrapper />
 );
 
 Impressions.propTypes = {

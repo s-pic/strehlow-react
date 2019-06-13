@@ -13,9 +13,7 @@ const Heading = styled.h2`
 
 
 const Contact = () => (
-  <Wrapper>
-    <Heading>Contact</Heading>
-  </Wrapper>
+  <Wrapper />
 );
 
 Contact.propTypes = {

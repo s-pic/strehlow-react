@@ -15,7 +15,6 @@ const Heading = styled.h2`
 
 const Journey = () => (
   <Wrapper>
-    <Heading>Anreise</Heading>
     <Map />
   </Wrapper>
 );

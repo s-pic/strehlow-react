@@ -76,16 +76,19 @@ class NavBar extends Component {
         entries: PropTypes.arrayOf(PropTypes.shape({
             label: PropTypes.string,
             route: PropTypes.string
-        }))
+        })),
+        title: PropTypes.string
     };
 
     static defaultProps = {
-        entries: [{ label: 'Please provide a label', route: '/please name a route' }]
+        entries: [{ label: 'Please provide a label', route: '/please name a route' }],
+        title: 'StrehlowWeb'
     };
 
     render() {
         const {
           entries,
+          title,
           location,
           layout,
           toggleNavBarCollapsed
@@ -95,7 +98,15 @@ class NavBar extends Component {
         const smallScreen = isSmallScreen();
         return (
           <StyledNavbar color="transparent" light expand="md" fixed={smallScreen ? 'undefined' : 'top'}>
-            {smallScreen && (<StyledNavBarBrand to={config.nav.Home} tag={Link} className="mr-auto">StrehlowWeb</StyledNavBarBrand>)}
+            {smallScreen && (
+            <StyledNavBarBrand
+              to={config.nav.Home}
+              tag={Link}
+              className="mr-auto"
+            >
+              {title}
+            </StyledNavBarBrand>
+            )}
             <StyledNavbarToggler onClick={toggleNavBarCollapsed} />
             <Collapse isOpen={navBarCollapsed} navbar>
               <StyledNav>
