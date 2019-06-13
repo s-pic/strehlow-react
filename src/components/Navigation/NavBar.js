@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'unistore/react';
+import Actions from '~/state/Actions';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
@@ -81,28 +83,21 @@ class NavBar extends Component {
         entries: [{ label: 'Please provide a label', route: '/please name a route' }]
     };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isOpen: false
-        };
-    }
-
-    toggle = () => {
-        this.setState(prevState => ({
-            isOpen: !prevState.isOpen
-        }));
-    };
-
     render() {
-        const { entries, location } = this.props;
+        const {
+          entries,
+          location,
+          layout,
+          toggleNavBarCollapsed
+        } = this.props;
+        const { navBarCollapsed } = layout;
+
         const smallScreen = isSmallScreen();
         return (
           <StyledNavbar color="transparent" light expand="md" fixed={smallScreen ? 'undefined' : 'top'}>
             {smallScreen && (<StyledNavBarBrand to={config.nav.Home} tag={Link} className="mr-auto">StrehlowWeb</StyledNavBarBrand>)}
-            <StyledNavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+            <StyledNavbarToggler onClick={toggleNavBarCollapsed} />
+            <Collapse isOpen={navBarCollapsed} navbar>
               <StyledNav>
                 {entries.map(entry => (
                   <NavItem key={`navitem-${entry.label}`}>
@@ -122,4 +117,7 @@ class NavBar extends Component {
     }
 }
 
-export default withRouter(NavBar);
+export default withRouter(connect(
+  state => state,
+  Actions
+)(NavBar));

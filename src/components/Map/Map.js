@@ -1,15 +1,13 @@
 import React, { PureComponent, Fragment } from 'react';
+import { connect } from 'unistore/react';
+import Actions from '~/state/Actions';
 import mapboxgl, { NavigationControl } from 'mapbox-gl';
 import styled from 'styled-components';
-import { media } from '~/styles/Utils';
 import * as propertyShape from '~/geodata/strehlow-property-trimmed.geojson';
+import { wait } from '~/util/async';
 
 const MapWrapper = styled.div`
-    height: calc(100% - ${config.layout.navBar.height});
-
-    ${media.m`
-        height: 100%;
-    `}
+    height: 100%;
 `;
 
 mapboxgl.accessToken = process.env.MAPBOX_KEY_DEV || config.map.tkn;
@@ -42,6 +40,16 @@ class Map extends PureComponent {
         this.addCustomOverlaysOnLoad();
 
         this.setState({ map: this.map });
+    }
+
+    componentDidUpdate(prevProps) {
+        const wasSqueezed = prevProps.layout.navBarCollapsed;
+        const isSqueezed = this.props.layout.navBarCollapsed;
+        if (wasSqueezed !== isSqueezed) {
+            wait(500).then(() => {
+                this.map.resize();
+            });
+        }
     }
 
     componentWillUnmount() {
@@ -105,4 +113,7 @@ class Map extends PureComponent {
     }
 }
 
-export default Map;
+export default connect(
+    state => state,
+    Actions
+  )(Map);
