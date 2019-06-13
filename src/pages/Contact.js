@@ -1,17 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import Main from '~/components/MainSection';
+import Map from '~/components/Map/Map';
 
 const Wrapper = styled(Main)`
   background-color: ${config.colors.darkGrey};
+  display: block;
 `;
 
-// const StyledHeading = styled.h2`
-// `;
+const Heading = styled.h2`
+  position: absolute;
+`;
+
 
 const Contact = () => (
   <Wrapper>
-    <h2>Contact</h2>
+    <Heading>Contact</Heading>
+    <Map />
   </Wrapper>
 );
 

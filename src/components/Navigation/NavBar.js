@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import { media, breakpoints, isSmallScreen } from '~/styles/Utils';
+import { media, isSmallScreen } from '~/styles/Utils';
 import {
   Collapse,
     Navbar,
@@ -15,17 +15,17 @@ import {
 
 const StyledNavbar = styled(Navbar)`
 
- @keyframes blend-in {
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+  @keyframes blend-in {
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
- }
 
- animation: 1s blend-in 1s ease-out forwards;
- transform: translateY(-100px);
- opacity: 0;
- justify-content: flex-end;
+  animation: 1s blend-in 1s ease-out forwards;
+  transform: translateY(-100px);
+  opacity: 0;
+  justify-content: flex-end;
 `;
 
 const StyledNav = styled(Nav)`
@@ -49,8 +49,9 @@ const StyledNavbarToggler = styled(NavbarToggler)`
   }
 `;
 
-const StyledNavBarBrand = styled.h2`
-  color: #fff;
+const StyledNavBarBrand = styled(NavbarBrand)`
+  color: #fff !important;
+  cursor: pointer;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -96,10 +97,10 @@ class NavBar extends Component {
 
     render() {
         const { entries, location } = this.props;
-        const _isSmallScreen = isSmallScreen();
+        const smallScreen = isSmallScreen();
         return (
-          <StyledNavbar color="transparent" light expand="md" fixed={_isSmallScreen ? 'undefined' : 'top'}>
-            {_isSmallScreen && (<StyledNavBarBrand to={config.nav.Home} tag={Link} className="mr-auto">StrehlowWeb</StyledNavBarBrand>)}
+          <StyledNavbar color="transparent" light expand="md" fixed={smallScreen ? 'undefined' : 'top'}>
+            {smallScreen && (<StyledNavBarBrand to={config.nav.Home} tag={Link} className="mr-auto">StrehlowWeb</StyledNavBarBrand>)}
             <StyledNavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <StyledNav>
