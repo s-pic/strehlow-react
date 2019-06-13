@@ -15,7 +15,8 @@
     "Home": "/home",
     "Aktivitäten": "/was-geht",
     "Impressionen": "/impressionen",
-    "Kontakt": "/kontakt"
+    "Kontakt": "/kontakt",
+    "Anreise": "/anreise"
   },
   "colors": {
     "black:": "#171717",

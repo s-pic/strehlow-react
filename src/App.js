@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
- Switch, Route, Redirect, withRouter
+  Switch, Route, Redirect, withRouter
 } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import Actions from '~/state/Actions';
@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import NavBar from '~/components/Navigation/NavBar';
 import Home from '~/pages/Home';
 import Contact from '~/pages/Contact';
+import Journey from '~/pages/Journey';
 import Activities from '~/pages/Activities';
 import Impressions from '~/pages/Impressions';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -28,43 +29,45 @@ const AppWrapper = styled.div`
 `;
 
 class App extends PureComponent {
-    getNavEntries = () => Object.keys(config.nav).map(label => ({ label, route: config.nav[label] }));
+  getNavEntries = () => Object.keys(config.nav).map(label => ({ label, route: config.nav[label] }));
 
-    render() {
-        const { location } = this.props;
-        return (
-          <AppWrapper>
-            <NavBar entries={this.getNavEntries()} />
-            <TransitionGroup>
-              <CSSTransition
-                key={location.key}
-                timeout={{ enter: 300, exit: 300 }}
-                classNames="fade"
-              >
-                <Switch location={location}>
-                  <Route
-                    exact
-                    path={config.nav.Home}
-                    render={() => (
-                      <Home
-                        heading={config.texts.Home.heading}
-                        subheading={config.texts.Home.subheading}
-                      />
-                  )}
+  render() {
+    const { location } = this.props;
+    return (
+      <AppWrapper>
+        <NavBar entries={this.getNavEntries()} />
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            timeout={{ enter: 300, exit: 300 }}
+            classNames="fade"
+          >
+            <Switch location={location}>
+              <Route
+                exact
+                path={config.nav.Home}
+                render={() => (
+                  <Home
+                    heading={config.texts.Home.heading}
+                    subheading={config.texts.Home.subheading}
                   />
-                  <Route exact path={config.nav.Kontakt} component={Contact} />
-                  <Route exact path={config.nav['Aktivitäten']} component={Activities} />
-                  <Route exact path={config.nav.Impressionen} component={Impressions} />
-                  <Route exact path="/" render={() => (<Redirect to={config.nav.Home} />)} />
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-          </AppWrapper>
-        );
-    }
+                )}
+              />
+              <Route exact path={config.nav.Kontakt} component={Contact} />
+              <Route exact path={config.nav.Anreise} component={Journey} />
+              <Route exact path={config.nav['Aktivitäten']} component={Activities} />
+              <Route exact path={config.nav.Impressionen} component={Impressions} />
+              <Route exact path="/" render={() => (<Redirect to={config.nav.Home} />)} />
+              <Route render={() => <Redirect to={config.nav.Home} />} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      </AppWrapper>
+    );
+  }
 }
 
 export default withRouter(connect(
-    state => state,
-    Actions
+  state => state,
+  Actions
 )(App));

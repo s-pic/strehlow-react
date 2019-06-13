@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Main from '~/components/MainSection';
+import Map from '~/components/Map/Map';
 
 const Wrapper = styled(Main)`
   background-color: ${config.colors.darkGrey};
@@ -12,16 +13,17 @@ const Heading = styled.h2`
 `;
 
 
-const Contact = () => (
+const Journey = () => (
   <Wrapper>
-    <Heading>Contact</Heading>
+    <Heading>Anreise</Heading>
+    <Map />
   </Wrapper>
 );
 
-Contact.propTypes = {
+Journey.propTypes = {
 };
 
-Contact.defaultProps = {
+Journey.defaultProps = {
 };
 
-export default Contact;
+export default Journey;
