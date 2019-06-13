@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import { Layers } from 'react-feather';
 
@@ -17,10 +16,6 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`;
-
-const Icon = styled(Layers)`
-
 `;
 
 class LayerSwitcher extends PureComponent {
