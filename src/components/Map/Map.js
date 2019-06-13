@@ -5,9 +5,17 @@ import mapboxgl, { NavigationControl } from 'mapbox-gl';
 import styled from 'styled-components';
 import * as propertyShape from '~/geodata/strehlow-property-trimmed.geojson';
 import { wait } from '~/util/async';
+import { media } from '~/styles/Utils';
+
 
 const MapWrapper = styled.div`
     height: 100%;
+
+    ${media.m`
+        .mapboxgl-ctrl-top-right {
+            top: 60px;
+        }
+    `}
 `;
 
 mapboxgl.accessToken = process.env.MAPBOX_KEY_DEV || config.map.tkn;

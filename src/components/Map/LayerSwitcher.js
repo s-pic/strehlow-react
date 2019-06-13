@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { Layers } from 'react-feather';
+import { media } from '~/styles/Utils';
 
 const Wrapper = styled.div`
     position: absolute;
@@ -16,6 +17,10 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 2px;
+
+    ${media.m`
+        top: 60px;
+    `}
 `;
 
 class LayerSwitcher extends PureComponent {
