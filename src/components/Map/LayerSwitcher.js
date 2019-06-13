@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-
 import { Layers } from 'react-feather';
 
 const Wrapper = styled.div`
     position: absolute;
-    top:  calc(${config.layout.navBar.height} + 10px);
-    left: 10px;
+    top:  calc(${config.layout.navBar.height} + 50px);
+    right: 10px;
     width: 30px;
     height: 30px;
     border-radius: 4px;
@@ -32,7 +31,7 @@ class LayerSwitcher extends PureComponent {
     render() {
         return (
           <Wrapper onClick={this.toggleLayer}>
-            <Icon />
+            <Layers />
           </Wrapper>
         );
     }
