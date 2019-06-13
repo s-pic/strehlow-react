@@ -4,7 +4,7 @@ import { Layers } from 'react-feather';
 
 const Wrapper = styled.div`
     position: absolute;
-    top:  calc(${config.layout.navBar.height} + 10px);
+    top:  10px;
     left: 10px;
     width: 30px;
     height: 30px;
