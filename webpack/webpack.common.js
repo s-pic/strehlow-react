@@ -80,6 +80,10 @@ module.exports = {
            */
         ],
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(geojson)$/,
+        loader: 'json-loader'
       }
     ]
   }

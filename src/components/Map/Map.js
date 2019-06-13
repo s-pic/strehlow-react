@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import mapboxgl, { NavigationControl } from 'mapbox-gl';
 import styled from 'styled-components';
 import { media } from '~/styles/Utils';
-
+import * as propertyShape from '~/geodata/strehlow-property-trimmed.geojson';
 
 const MapWrapper = styled.div`
     height: calc(100% - ${config.layout.navBar.height});
@@ -39,6 +39,8 @@ class Map extends PureComponent {
 
         this.addControls();
 
+        this.addCustomOverlaysOnLoad();
+
         this.setState({ map: this.map });
     }
 
@@ -48,6 +50,15 @@ class Map extends PureComponent {
 
     registerMapRef = (el) => {
         this.mapContainer = el;
+    }
+
+    addCustomOverlaysOnLoad = () => {
+        this.map.on('style.load', this.addCustomOverlays);
+    }
+
+    addCustomOverlays = () => {
+        this.addPropertyShape();
+        this.addAdressMarker();
     }
 
     addControls = () => {
@@ -61,6 +72,27 @@ class Map extends PureComponent {
             },
             trackUserLocation: true
         }));
+    }
+
+    addAdressMarker = () => {
+
+    }
+
+    addPropertyShape = () => {
+        this.STREHLOW_PROPERTY_LAYER_ID = 'strehlow-property';
+        this.map.addLayer({
+            id: 'strehlow-property',
+            type: 'fill',
+            source: {
+                type: 'geojson',
+                data: propertyShape
+            },
+            layout: {},
+            paint: {
+                'fill-color': 'orange',
+                'fill-opacity': 0.5
+            }
+        });
     }
 
     render() {
