@@ -13,9 +13,10 @@ import Activities from '~/pages/Activities';
 import Impressions from '~/pages/Impressions';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+// make sure content is not bigger than viewport minus the height of the adress bar,
+// see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 const vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 const StyledTransitionGroup = styled(TransitionGroup)`
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
