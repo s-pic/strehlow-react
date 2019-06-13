@@ -6,9 +6,9 @@
   "version": "0.0.1",
   "description": "A website for family Schmidt and their magical place in Strehlow-Vorwerk",
   "scripts": {
+    "start": "webpack-dev-server --config webpack/webpack.config.dev.js",
     "build": "webpack --config webpack/webpack.config.prod.js --colors",
-    "build-dev": "webpack --config webpack/webpack.config.dev.js --colors",
-    "start": "webpack-dev-server --config webpack/webpack.config.dev.js"
+    "build-dev": "webpack --config webpack/webpack.config.dev.js --colors"
   },
   "repository": {
     "url": "https://github.com/geomC/strehlow-react",
@@ -49,12 +49,14 @@
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.7.1",
+    "webpack-dotenv-plugin": "^2.1.0",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "bootstrap": "^4.3.1",
     "core-js": "^3.1.3",
+    "mapbox-gl": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

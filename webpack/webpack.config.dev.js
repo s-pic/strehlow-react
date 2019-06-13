@@ -2,6 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const DotenvPlugin = require('webpack-dotenv-plugin');
 
 const publicPath = process.env.BASENAME || '/';
 
@@ -21,8 +22,11 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
+    new DotenvPlugin({
+      sample: './.env.default',
+      path: './.env'
+    })
   ],
-
   module: {
     rules: [
       {

@@ -12,14 +12,22 @@ As development boiler plate, [webkid´s React Starterkit](https://github.com/wbk
 
 # Usage
 
+## Setup
+
+Development requires optaining a personal [mapbox](https://www.mapbox.com/) [API Token](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/), since the API key stored in the repo is bound to the host where the app is deployed to later on.
+
+Store the key in ./.env like `MAPBOX_KEY_DEV={INSERT-YOUR-KEY-HERE}`. Otherwise webpack will throw an error complaining about the missing environment variable.
+
 ## Development
 
 Builds the application and starts a webserver with hot loading.
-Runs on [localhost:8080](http://localhost:8080/)
 
 ```sh
 $ npm run start
 ```
+
+The app runs on [localhost:8080](http://localhost:8080/)
+
 
 ## Build
 
