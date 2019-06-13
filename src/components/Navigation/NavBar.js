@@ -15,6 +15,7 @@ import {
     NavbarBrand
 } from 'reactstrap';
 
+
 const StyledNavbar = styled(Navbar)`
 
   @keyframes blend-in {
@@ -24,9 +25,12 @@ const StyledNavbar = styled(Navbar)`
     }
   }
 
-  animation: 1s blend-in 1s ease-out forwards;
-  transform: translateY(-100px);
-  opacity: 0;
+  &:not(.small-screen) {
+    opacity: 0;
+    animation: 1s blend-in 1s ease-out forwards;
+    transform: translateY(-100px);
+  }
+  
   justify-content: flex-end;
 `;
 
@@ -97,7 +101,12 @@ class NavBar extends Component {
 
         const smallScreen = isSmallScreen();
         return (
-          <StyledNavbar color="transparent" light expand="md" fixed={smallScreen ? 'undefined' : 'top'}>
+          <StyledNavbar
+            light
+            expand="md"
+            fixed={smallScreen ? 'undefined' : 'top'}
+            className={smallScreen ? 'small-screen' : ''}
+          >
             {smallScreen && (
             <StyledNavBarBrand
               to={config.nav.Home}
