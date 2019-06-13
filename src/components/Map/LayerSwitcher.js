@@ -4,8 +4,8 @@ import { Layers } from 'react-feather';
 
 const Wrapper = styled.div`
     position: absolute;
-    top:  calc(${config.layout.navBar.height} + 50px);
-    right: 10px;
+    top:  calc(${config.layout.navBar.height} + 10px);
+    left: 10px;
     width: 30px;
     height: 30px;
     border-radius: 4px;
@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 2px;
 `;
 
 class LayerSwitcher extends PureComponent {
