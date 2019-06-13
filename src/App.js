@@ -13,6 +13,10 @@ import Activities from '~/pages/Activities';
 import Impressions from '~/pages/Impressions';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
+const StyledTransitionGroup = styled(TransitionGroup)`
+   height: 100%;
+`;
+
 const AppWrapper = styled.div`
   height: 100%;
   width: 100%;
@@ -36,7 +40,7 @@ class App extends PureComponent {
     return (
       <AppWrapper>
         <NavBar entries={this.getNavEntries()} />
-        <TransitionGroup>
+        <StyledTransitionGroup>
           <CSSTransition
             key={location.key}
             timeout={{ enter: 300, exit: 300 }}
@@ -61,7 +65,7 @@ class App extends PureComponent {
               <Route render={() => <Redirect to={config.nav.Home} />} />
             </Switch>
           </CSSTransition>
-        </TransitionGroup>
+        </StyledTransitionGroup>
       </AppWrapper>
     );
   }
