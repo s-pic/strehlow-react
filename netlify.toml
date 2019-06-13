@@ -1,6 +1,5 @@
 # https://www.netlify.com/docs/netlify-toml-reference/
 
-
 [build]
     publish = "build"
     command = "npm run build"
@@ -10,3 +9,8 @@
 
 [context.deploy-preview]
     command = "npm run build-dev"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
