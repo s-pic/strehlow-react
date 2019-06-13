@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import mapboxgl, { NavigationControl } from 'mapbox-gl';
 import styled from 'styled-components';
 import { media } from '~/styles/Utils';
@@ -15,6 +15,13 @@ const MapWrapper = styled.div`
 mapboxgl.accessToken = process.env.MAPBOX_KEY_DEV || config.map.tkn;
 
 class Map extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            map: null
+        };
+    }
+
     componentDidMount() {
         const { zoom, center } = config.map.initialView;
 
@@ -31,6 +38,8 @@ class Map extends PureComponent {
         }
 
         this.addControls();
+
+        this.setState({ map: this.map });
     }
 
     componentWillUnmount() {
@@ -56,7 +65,10 @@ class Map extends PureComponent {
 
     render() {
         return (
-          <MapWrapper ref={this.registerMapRef} />
+          <Fragment>
+            <MapWrapper ref={this.registerMapRef} />
+            {this.props.children && this.state.map && this.props.children(this.state.map)}
+          </Fragment>
         );
     }
 }

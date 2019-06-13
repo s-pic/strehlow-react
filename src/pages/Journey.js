@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Main from '~/components/MainSection';
-import Map from '~/components/Map/Map';
+import Map from '~/components/Map';
 
 const Wrapper = styled(Main)`
   background-color: ${config.colors.darkGrey};
