@@ -4,6 +4,13 @@
     "viewport": "width=device-width, initial-scale=1",
     "robots": "noindex,nofollow"
   },
+  "map": {
+    "tkn": "pk.eyJ1IjoiZ2VvbWMiLCJhIjoiY2p3dDlzaWIzMDN0cDRhcGs3a2doNXg5bCJ9.Ke7vSP8PjUihzEThAWrvcA",
+    "initialView": {
+      "center": [53.223615,13.815088],
+      "zoom": 14
+    }
+  },
   "nav": {
     "Home": "/home",
     "Aktivitäten": "/was-geht",
