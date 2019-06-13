@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl';
-import bankImg from '~/images/impressions/bank.jpg';
+import bankImg from '~/images/icon/bank.jpg';
 
 const Marker = styled.div`
     background-image: url(${bankImg});
