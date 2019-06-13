@@ -48,7 +48,8 @@ const StyledNav = styled(Nav)`
 `;
 
 const StyledNavbarToggler = styled(NavbarToggler)`
-  background-color: rgba(255,255,255,0.2);
+  background-color: white;
+  filter: invert(100%);
   
   &&:focus {
     outline: none;
