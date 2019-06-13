@@ -14,7 +14,6 @@ import {
 } from 'reactstrap';
 
 const StyledNavbar = styled(Navbar)`
-  height: ${config.layout.navBar.height};
 
   @keyframes blend-in {
     100% {
