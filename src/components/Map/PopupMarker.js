@@ -23,8 +23,11 @@ class PopupMarker extends PureComponent {
     componentDidMount() {
         const { map, position } = this.props;
 
+        const adress = document.createElement('adress');
+        adress.innerHTML = config.meta.adress.replace(',', ',<br>');
+
         const popup = new mapboxgl.Popup({ offset: 25 })
-            .setText(`${config.meta.adress}`);
+            .setDOMContent(adress);
 
         new mapboxgl.Marker(this.markerContainer)
             .setLngLat(position)
