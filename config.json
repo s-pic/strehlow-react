@@ -1,11 +1,19 @@
 {
   "meta": {
     "title": "StrehlowWeb",
-    "description": "Strehlow Web",
+    "description": "Unser Hof in Strehlow stellt sich vor",
     "viewport": "width=device-width, initial-scale=1",
     "robots": "noindex,nofollow",
     "contact": {
       "adress": "Fam. Bittner-Schmidt, Vorwerk 12, 17291 Oberuckersee, OT-Strehlow"
+    },
+    "author": {
+      "name": "Sascha Picard",
+      "contacts": {
+        "github": "https://github.com/geomC",
+        "linkedIn": "https://www.linkedin.com/in/sascha-picard-ba23b9129/",
+        "mail": "sascha.picard@gmail.com"
+      }
     }
   },
   "map": {
@@ -37,7 +45,8 @@
       "subheading": "Sport, Kultur, Wellness, Natur."
     },
     "Contact": {
-      "heading": "Sprich uns an!"
+      "heading": "Sprich uns an!",
+      "footerText": "Mit Liebe entwickelt von"
     }
   },
   "layout": {
