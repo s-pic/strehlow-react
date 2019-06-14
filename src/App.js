@@ -3,14 +3,13 @@ import {
   Switch, Route, Redirect, withRouter
 } from 'react-router-dom';
 import styled from 'styled-components';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import NavBar from '~/components/Navigation';
 import Home from '~/pages/Home';
 import Contact from '~/pages/Contact';
 import Journey from '~/pages/Journey';
 import Activities from '~/pages/Activities';
 import Impressions from '~/pages/Impressions';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -85,6 +84,9 @@ class App extends PureComponent {
                     heading={config.texts.Contact.heading}
                     footerText={`${config.texts.Contact.footerText} ${config.meta.author.name}`}
                     authorContacts={config.meta.author.contacts}
+                    adressText={config.meta.contact.adress}
+                    phone={config.meta.contact.phone}
+                    mail={config.meta.contact.mail}
                   />
               )}
               />

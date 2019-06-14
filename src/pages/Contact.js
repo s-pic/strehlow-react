@@ -112,22 +112,47 @@ const ContactLink = styled.a`
   }
 `;
 
-const Contact = ({ heading, footerText, authorContacts }) => (
+
+const Contact = ({
+ heading, footerText, phone, mail, authorContacts, adressText
+}) => (
   <Wrapper>
     <Heading>{heading}</Heading>
     <GridWrapper>
 
       <Icon><MapPin /></Icon>
       <Topic>Adresse</Topic>
-      <InfoText>Excepteur ut exercitation do tempor nostrud labore laborum excepteur irure est cillum excepteur esse. Consequat proident voluptate commodo voluptate. Qui ad exercitation adipisicing voluptate dolore elit.</InfoText>
+      <InfoText>
+
+        <strong>
+          {adressText
+          .split(', ')
+          .join('\n')
+          // FIXME: linebreak won't render
+          }
+        </strong>
+
+
+      </InfoText>
 
       <Icon><Phone /></Icon>
       <Topic>Telefon</Topic>
-      <InfoText>Excepteur ut exercitation do tempor nostrud labore laborum excepteur irure est cillum excepteur esse. Consequat proident voluptate commodo voluptate. Qui ad exercitation adipisicing voluptate dolore elit.</InfoText>
+      <InfoText>
+        Ihr Erreicht uns unter
+        <br />
+        <a href={`tel:${phone}`}>{phone}</a>
+      </InfoText>
 
       <Icon><Mail /></Icon>
       <Topic>E-Mail</Topic>
-      <InfoText>Excepteur ut exercitation do tempor nostrud labore laborum excepteur irure est cillum excepteur esse. Consequat proident voluptate commodo voluptate. Qui ad exercitation adipisicing voluptate dolore elit.</InfoText>
+      <InfoText>
+      Schreibt uns!
+        <br />
+        <a href={`mailto:${authorContacts.mail}`} target="_blank">
+          {mail}
+        </a>
+
+      </InfoText>
 
       <Footer>
         <p>{footerText}</p>
@@ -145,7 +170,9 @@ const Contact = ({ heading, footerText, authorContacts }) => (
 Contact.propTypes = {
   heading: PropTypes.string,
   footerText: PropTypes.string.isRequired,
-  authorContacts: PropTypes.object.isRequired
+  // authorContacts: PropTypes.shape(PropTypes.any).isRequired, FIXME: doc properly
+  phone: PropTypes.string.isRequired,
+  mail: PropTypes.string.isRequired
 };
 
 Contact.defaultProps = {
