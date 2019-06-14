@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Main from '~/components/MainSection';
+import { FullHeightMain } from '~/components/MainSection';
 import Map from '~/components/Map';
 
-const Wrapper = styled(Main)`
+const Wrapper = styled(FullHeightMain)`
   background-color: ${config.colors.darkGrey};
   display: block;
 `;

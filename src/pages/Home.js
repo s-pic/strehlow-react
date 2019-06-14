@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { media } from '~/styles/Utils';
-import Main from '~/components/MainSection';
+import { FullHeightMain } from '~/components/MainSection';
 import HomeImage from '~/images/bg/sky_big.JPG';
 
-const Wrapper = styled(Main)`
+const Wrapper = styled(FullHeightMain)`
   background-image: url(${HomeImage});
 
   ${media.l`

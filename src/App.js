@@ -77,7 +77,15 @@ class App extends PureComponent {
                   />
                 )}
               />
-              <Route exact path={config.nav.Kontakt} component={Contact} />
+              <Route
+                exact
+                path={config.nav.Kontakt}
+                render={() => (
+                  <Contact
+                    heading={config.texts.Contact.heading}
+                  />
+              )}
+              />
               <Route exact path={config.nav.Anreise} component={Journey} />
               <Route exact path={config.nav['Aktivitäten']} component={Activities} />
               <Route exact path={config.nav.Impressionen} component={Impressions} />

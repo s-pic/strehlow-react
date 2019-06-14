@@ -35,6 +35,9 @@
     "Home": {
       "heading": "Willkommen in Strehlow",
       "subheading": "Sport, Kultur, Wellness, Natur."
+    },
+    "Contact": {
+      "heading": "Sprich uns an!"
     }
   },
   "layout": {
