@@ -52,6 +52,8 @@ class PopupMarker extends PureComponent {
 
         routingLinkAnchor.target = '_blank';
 
+        routingLinkAnchor.setAttribute('style', 'display:block;padding:8px;margin-top:8px;border:1px solid #007bff; border-radius:12px;');
+
         div.appendChild(document.createElement('br'));
         div.appendChild(routingLinkAnchor);
 
