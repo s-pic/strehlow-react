@@ -92,6 +92,80 @@
         "thumbnailHeight": 320,
         "caption": "Die Seele baumeln lassen"
       }
+    ],
+    "impressions": [
+      {
+        "src": "public/assets/images/impressions/haus.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/haus.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/bank.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/bank.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/feuer.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/feuer.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/garten.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/garten.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/herz.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/herz.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/rotes-zimmer.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/rotes-zimmer.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/drinnen-tisch.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/drinnen-tisch.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/schuppen.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/schuppen.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/sunset.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/sunset.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/sunset2.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/sunset2.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/tisch.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/tisch.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
+      {
+        "src": "public/assets/images/impressions/tisch-gedeckt.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/tisch-gedeckt.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      }
     ]
   }
 }
