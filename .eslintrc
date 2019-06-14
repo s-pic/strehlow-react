@@ -20,10 +20,12 @@
       "caseSensitive": false
       }
     ],
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*spec.js", "**/*test.js", "**/setupTests.js"]}]
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "settings": {
     "import/resolver": {
