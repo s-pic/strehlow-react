@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys)
+
 
 # About
 This is hobby project that aims to establish a website for peers of mine. 
@@ -37,8 +37,22 @@ Builds a minified version of the application in the build folder.
 $ npm run build
 ```
 
-# CI
+## CI/CD
 
 [Netlfiy](https://www.netlify.com) is used for continious deployments.
 Production builds can be viewed at https://strehlow-uckermark.com,
 dev builds at https://development.strehlow-uckermark.com.
+
+### Netlfiy deploy status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys)
+
+## Images
+
+- [imagick](http://www.imagemagick.org) is used for thumbnail generation
+```sh
+$ cd somePath
+$ mogrify -resize 480x320 *.jpg
+```
+- [react-grid-gallery](https://github.com/benhowell/react-grid-gallery) is used to display them
+- new images can be added to ./config.json
