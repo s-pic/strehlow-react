@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Map from './Map';
 import LayerSwitcher from './LayerSwitcher';
 import PopupMarker from './PopupMarker';
+import { formatAdress } from '~/util/format';
 
 export default () => {
   const onMarkerClick = map => map.easeTo({
@@ -9,7 +10,6 @@ export default () => {
     center: config.map.markerPosition
   });
 
-  const formatAdress = text => text.replace(/,/g, '<br>');
 
   return (
     <Map>
