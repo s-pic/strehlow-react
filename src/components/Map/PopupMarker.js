@@ -17,14 +17,15 @@ const Marker = styled.div`
 
 class PopupMarker extends PureComponent {
     static propTypes = {
-        position: PropTypes.arrayOf(PropTypes.number).isRequired
+        position: PropTypes.arrayOf(PropTypes.number).isRequired,
+        markerHtml: PropTypes.string.isRequired
     }
 
     componentDidMount() {
-        const { map, position } = this.props;
+        const { map, position, markerHtml } = this.props;
 
         const popup = new mapboxgl.Popup({ offset: 25 })
-            .setDOMContent(this.getPopupContent());
+            .setDOMContent(this.getPopupContent(markerHtml));
 
         new mapboxgl.Marker(this.markerContainer)
             .setLngLat(position)
@@ -36,10 +37,10 @@ class PopupMarker extends PureComponent {
         this.markerContainer = el;
     }
 
-    getPopupContent = () => {
+    getPopupContent = (markerHtml) => {
         const div = document.createElement('div');
         const adress = document.createElement('adress');
-        adress.innerHTML = config.meta.adress.replace(',', ',<br>');
+        adress.innerHTML = markerHtml;
         div.appendChild(adress);
 
         const routingLinkText = 'Google Maps Navigation Starten';

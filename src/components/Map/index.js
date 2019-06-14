@@ -8,7 +8,11 @@ export default () => (
     {map => (
       <Fragment>
         <LayerSwitcher map={map} />
-        <PopupMarker map={map} position={config.map.markerPosition} />
+        <PopupMarker
+          map={map}
+          position={config.map.markerPosition}
+          markerHtml={config.meta.contact.adress.replace(',', ',<br>')}
+        />
       </Fragment>
         )}
   </Map>

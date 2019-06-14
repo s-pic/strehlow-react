@@ -4,7 +4,9 @@
     "description": "Strehlow Web",
     "viewport": "width=device-width, initial-scale=1",
     "robots": "noindex,nofollow",
-    "adress": "Fam. Bittner-Schmidt, Vorwerk 12, 17291 Oberuckersee"
+    "contact": {
+      "adress": "Fam. Bittner-Schmidt, Vorwerk 12, 17291 Oberuckersee"
+    }
   },
   "map": {
     "tkn": "pk.eyJ1IjoiZ2VvbWMiLCJhIjoiY2p3dDlzaWIzMDN0cDRhcGs3a2doNXg5bCJ9.Ke7vSP8PjUihzEThAWrvcA",
