@@ -10,8 +10,6 @@ describe('ImageGallery Component', () => {
             thumbnailWidth: 61,
             thumbnailHeight: 68
         }];
-
-        const Component = shallow(<ImageGallery images={testImagesConfig} />);
-        console.log(Component.debug());
+        shallow(<ImageGallery images={testImagesConfig} />);
     });
 });
