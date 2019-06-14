@@ -1,4 +1,4 @@
-export default Store => ({
+export default () => ({
     toggleNavBarCollapsed(state) {
         return {
             layout: {
