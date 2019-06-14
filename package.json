@@ -76,8 +76,10 @@
     "unistore": "^3.4.1"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "verbose": true,
     "bail": true
-   }
+  }
 }
