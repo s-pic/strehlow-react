@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default styled.div`
   position: relative;
   height: 100%;
-  background-color: #ecf0f1;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   background-size: cover;
   background-position: center;
   display: flex;
