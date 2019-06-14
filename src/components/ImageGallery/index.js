@@ -14,9 +14,9 @@ ImageGallery.propTypes = {
     images: PropTypes.arrayOf(
         PropTypes.shape({
             src: PropTypes.string.isRequired,
-            thumbnail: PropTypes.string,
-            thumbnailWidth: PropTypes.number,
-            thumbnailHeight: PropTypes.number,
+            thumbnail: PropTypes.string.isRequired,
+            thumbnailWidth: PropTypes.number.isRequired,
+            thumbnailHeight: PropTypes.number.isRequired,
             caption: PropTypes.string
         })
     ).isRequired
