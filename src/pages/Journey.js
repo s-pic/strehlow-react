@@ -8,11 +8,6 @@ const Wrapper = styled(Main)`
   display: block;
 `;
 
-const Heading = styled.h2`
-  position: absolute;
-`;
-
-
 const Journey = () => (
   <Wrapper>
     <Map />

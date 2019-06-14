@@ -5,7 +5,6 @@ import Gallery from 'react-grid-gallery';
 import { media } from '~/styles/Utils';
 
 const Wrapper = styled(Main)`
-  background-color: #171717;
   display: block;
   overflow: auto;
   

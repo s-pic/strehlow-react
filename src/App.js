@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import {
   Switch, Route, Redirect, withRouter
 } from 'react-router-dom';
-import { connect } from 'unistore/react';
-import Actions from '~/state/Actions';
 import styled from 'styled-components';
 import NavBar from '~/components/Navigation/NavBar';
 import Home from '~/pages/Home';
@@ -42,9 +40,14 @@ class App extends PureComponent {
   getSectionTitle = () => {
       const currentRoute = this.props.location.pathname;
 
-      return currentRoute === '/home'
+      return this.isLanding()
         ? config.meta.title
       : Object.keys(config.nav).find(key => config.nav[key] === currentRoute);
+  }
+
+  isLanding = () => {
+    const currentRoute = this.props.location.pathname;
+    return currentRoute === config.nav.Home;
   }
 
   render() {
@@ -54,6 +57,7 @@ class App extends PureComponent {
         <NavBar
           entries={this.getNavEntries()}
           title={this.getSectionTitle()}
+          hasDarkBg={this.isLanding()}
         />
         <StyledTransitionGroup>
           <CSSTransition

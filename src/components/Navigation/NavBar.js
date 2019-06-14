@@ -7,12 +7,12 @@ import { Link, withRouter } from 'react-router-dom';
 import { media, isSmallScreen } from '~/styles/Utils';
 import {
   Collapse,
-    Navbar,
-    NavbarToggler,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarBrand
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarBrand
 } from 'reactstrap';
 
 
@@ -74,68 +74,87 @@ const StyledNavLink = styled(NavLink)`
     opacity: 1;
     border-bottom: 2px solid ${config.colors.lightGreen}
   }
+
+  &.has-dark-bg {
+    color: white;
+    &&:hover {
+      color: white;
+    }
+  }
+
+  /* Desktop  */
+  ${media.m`
+    color: ${config.colors.black};
+
+    &&:hover {
+      color: ${config.colors.skyBlue};
+    }
+  `}
 `;
 
 class NavBar extends Component {
-    static propTypes = {
-        entries: PropTypes.arrayOf(PropTypes.shape({
-            label: PropTypes.string,
-            route: PropTypes.string
-        })),
-        title: PropTypes.string
-    };
+  static propTypes = {
+    entries: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string,
+      route: PropTypes.string
+    })),
+    title: PropTypes.string,
+    hasDarkBg: PropTypes.bool
+  };
 
-    static defaultProps = {
-        entries: [{ label: 'Please provide a label', route: '/please name a route' }],
-        title: 'StrehlowWeb'
-    };
+  static defaultProps = {
+    entries: [{ label: 'Please provide a label', route: '/please name a route' }],
+    title: 'StrehlowWeb',
+    hasDarkBg: true
+  };
 
-    render() {
-        const {
-          entries,
-          title,
-          location,
-          layout,
-          toggleNavBarCollapsed
-        } = this.props;
-        const { navBarCollapsed } = layout;
+  render() {
+    const {
+      entries,
+      title,
+      location,
+      layout,
+      toggleNavBarCollapsed,
+      hasDarkBg
+    } = this.props;
+    const { navBarCollapsed } = layout;
 
-        const smallScreen = isSmallScreen();
-        return (
-          <StyledNavbar
-            light
-            expand="md"
-            fixed={smallScreen ? 'undefined' : 'top'}
-            className={smallScreen ? 'small-screen' : ''}
+    const smallScreen = isSmallScreen();
+    return (
+      <StyledNavbar
+        light
+        expand="md"
+        fixed={smallScreen ? 'undefined' : 'top'}
+        className={smallScreen ? 'small-screen' : ''}
+      >
+        {smallScreen && (
+          <StyledNavBarBrand
+            to={config.nav.Home}
+            tag={Link}
+            className="mr-auto"
           >
-            {smallScreen && (
-            <StyledNavBarBrand
-              to={config.nav.Home}
-              tag={Link}
-              className="mr-auto"
-            >
-              {title}
-            </StyledNavBarBrand>
-            )}
-            <StyledNavbarToggler onClick={toggleNavBarCollapsed} />
-            <Collapse isOpen={navBarCollapsed} navbar>
-              <StyledNav>
-                {entries.map(entry => (
-                  <NavItem key={`navitem-${entry.label}`}>
-                    <StyledNavLink
-                      tag={Link}
-                      to={entry.route}
-                      className={location.pathname === entry.route ? 'active' : ''}
-                    >
-                      {entry.label}
-                    </StyledNavLink>
-                  </NavItem>
-                      ))}
-              </StyledNav>
-            </Collapse>
-          </StyledNavbar>
-        );
-    }
+            {title}
+          </StyledNavBarBrand>
+        )}
+        <StyledNavbarToggler onClick={toggleNavBarCollapsed} />
+        <Collapse isOpen={navBarCollapsed} navbar>
+          <StyledNav>
+            {entries.map(entry => (
+              <NavItem key={`navitem-${entry.label}`}>
+                <StyledNavLink
+                  tag={Link}
+                  to={entry.route}
+                  className={`${location.pathname === entry.route ? 'active' : ''} ${hasDarkBg ? 'has-dark-bg' : ''}`}
+                >
+                  {entry.label}
+                </StyledNavLink>
+              </NavItem>
+            ))}
+          </StyledNav>
+        </Collapse>
+      </StyledNavbar>
+    );
+  }
 }
 
 export default withRouter(connect(
