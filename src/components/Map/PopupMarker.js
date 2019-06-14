@@ -18,23 +18,34 @@ const Marker = styled.div`
 class PopupMarker extends PureComponent {
     static propTypes = {
         position: PropTypes.arrayOf(PropTypes.number).isRequired,
-        markerHtml: PropTypes.string.isRequired
+        popupContent: PropTypes.string.isRequired,
+        onMarkerClick: PropTypes.func.isRequired
     }
 
     componentDidMount() {
-        const { map, position, markerHtml } = this.props;
+        const { map, position, popupContent } = this.props;
 
-        const popup = new mapboxgl.Popup({ offset: 25 })
-            .setDOMContent(this.getPopupContent(markerHtml));
+        this.popup = this.createPopup(popupContent);
 
-        new mapboxgl.Marker(this.markerContainer)
-            .setLngLat(position)
-            .setPopup(popup) // sets a popup on this marker
-            .addTo(map);
+        this.marker = this.createMarker({ map, position });
+
+        this.addMarkerClickListener();
     }
 
     registerMarkerRef = (el) => {
         this.markerContainer = el;
+    }
+
+    createPopup = textContent => new mapboxgl.Popup({ offset: 25 })
+            .setDOMContent(this.getPopupContent(textContent))
+
+    createMarker = ({ map, position }) => new mapboxgl.Marker(this.markerContainer)
+        .setLngLat(position)
+        .setPopup(this.popup) // sets a popup on this marker
+        .addTo(map)
+
+    addMarkerClickListener = () => {
+        this.markerContainer.addEventListener('click', this.props.onMarkerClick);
     }
 
     getPopupContent = (markerHtml) => {
