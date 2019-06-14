@@ -48,6 +48,11 @@ class Map extends PureComponent {
         this.addCustomOverlaysOnLoad();
 
         this.setState({ map: this.map });
+
+        // handle the case that just before the map was loaded, the containing div hat scrollbars
+        wait(1000).then(() => {
+            this.resizeMap();
+        });
     }
 
     componentDidUpdate(prevProps) {
@@ -55,7 +60,7 @@ class Map extends PureComponent {
         const isSqueezed = this.props.layout.navBarCollapsed;
         if (wasSqueezed !== isSqueezed) {
             wait(500).then(() => {
-                this.map.resize();
+                this.resizeMap();
             });
         }
     }
@@ -66,6 +71,10 @@ class Map extends PureComponent {
 
     registerMapRef = (el) => {
         this.mapContainer = el;
+    }
+
+    resizeMap = () => {
+        this.map.resize();
     }
 
     addCustomOverlaysOnLoad = () => {
