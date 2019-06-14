@@ -9,7 +9,7 @@ export default () => {
     center: config.map.markerPosition
   });
 
-  const formatAdress = text => text.replace(/\,/g, '<br>');
+  const formatAdress = text => text.replace(/,/g, '<br>');
 
   return (
     <Map>
