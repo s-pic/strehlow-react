@@ -3,7 +3,7 @@ import {
   Switch, Route, Redirect, withRouter
 } from 'react-router-dom';
 import styled from 'styled-components';
-import NavBar from '~/components/Navigation/NavBar';
+import NavBar from '~/components/Navigation';
 import Home from '~/pages/Home';
 import Contact from '~/pages/Contact';
 import Journey from '~/pages/Journey';
