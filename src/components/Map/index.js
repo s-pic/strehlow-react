@@ -9,6 +9,8 @@ export default () => {
     center: config.map.markerPosition
   });
 
+  const formatAdress = text => text.replace(/\,/g, '<br>');
+
   return (
     <Map>
       {map => (
@@ -17,7 +19,7 @@ export default () => {
           <PopupMarker
             map={map}
             position={config.map.markerPosition}
-            popupContent={config.meta.contact.adress.replace(',', ',<br>')}
+            popupContent={formatAdress(config.meta.contact.adress)}
             onMarkerClick={() => onMarkerClick(map)}
           />
         </Fragment>

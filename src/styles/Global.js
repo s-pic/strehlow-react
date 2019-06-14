@@ -49,5 +49,20 @@ export default createGlobalStyle`
   .fade-exit.fade-exit-active {
     opacity: 0.01;
     transition: opacity 300ms ease-in;
-  }  
+  } 
+
+
+  ${'' /* mapbox popup */}
+
+.custom-popup {
+
+  .mapboxgl-popup-content {
+    border-radius: 6px;
+    padding: 12px;
+  }
+
+  .mapboxgl-popup-close-button {
+    font-size: 14px;
+  }
+} 
 `;
