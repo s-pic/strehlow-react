@@ -141,10 +141,11 @@
         "thumbnailHeight": 320
       },
       {
-        "src": "public/assets/images/impressions/rotes-zimmer.jpg",
+        "src": "public/assets/images/impressions/rotes-zimmer-rotiert.jpg",
         "thumbnail": "public/assets/images/impressions/thumbs/rotes-zimmer.jpg",
-        "thumbnailWidth": 480,
-        "thumbnailHeight": 320
+        "thumbnailWidth": 320,
+        "thumbnailHeight": 320,
+        "orientation": 6
       },
       {
         "src": "public/assets/images/impressions/drinnen-tisch.jpg",
@@ -177,10 +178,11 @@
         "thumbnailHeight": 320
       },
       {
-        "src": "public/assets/images/impressions/tisch-gedeckt.jpg",
+        "src": "public/assets/images/impressions/tisch-gedeckt-rotiert.jpg",
         "thumbnail": "public/assets/images/impressions/thumbs/tisch-gedeckt.jpg",
-        "thumbnailWidth": 480,
-        "thumbnailHeight": 320
+        "thumbnailWidth": 320,
+        "thumbnailHeight": 320,
+        "orientation": 6
       }
     ]
   }

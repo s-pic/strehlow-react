@@ -17,7 +17,8 @@ ImageGallery.propTypes = {
             thumbnail: PropTypes.string.isRequired,
             thumbnailWidth: PropTypes.number.isRequired,
             thumbnailHeight: PropTypes.number.isRequired,
-            caption: PropTypes.string
+            caption: PropTypes.string,
+            orientation: PropTypes.number
         })
     ).isRequired
 };
