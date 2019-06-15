@@ -3,7 +3,6 @@ import { connect } from 'unistore/react';
 import Actions from '~/state/Actions';
 import mapboxgl, { NavigationControl } from 'mapbox-gl';
 import styled from 'styled-components';
-import * as propertyShape from '~/geodata/strehlow-property-trimmed.geojson';
 import { wait } from '~/util/async';
 import { media } from '~/styles/Utils';
 
@@ -45,8 +44,6 @@ class Map extends PureComponent {
 
         this.addControls();
 
-        this.addCustomOverlaysOnLoad();
-
         this.setState({ map: this.map });
 
         // handle the case that just before the map was loaded, the containing div hat scrollbars
@@ -77,15 +74,6 @@ class Map extends PureComponent {
         this.map.resize();
     }
 
-    addCustomOverlaysOnLoad = () => {
-        this.map.on('style.load', this.addCustomOverlays);
-    }
-
-    addCustomOverlays = () => {
-        this.addPropertyShape();
-        this.addAdressMarker();
-    }
-
     addControls = () => {
         // add controls
         const nav = new NavigationControl();
@@ -97,27 +85,6 @@ class Map extends PureComponent {
             },
             trackUserLocation: true
         }));
-    }
-
-    addAdressMarker = () => {
-
-    }
-
-    addPropertyShape = () => {
-        this.STREHLOW_PROPERTY_LAYER_ID = 'strehlow-property';
-        this.map.addLayer({
-            id: 'strehlow-property',
-            type: 'fill',
-            source: {
-                type: 'geojson',
-                data: propertyShape
-            },
-            layout: {},
-            paint: {
-                'fill-color': 'orange',
-                'fill-opacity': 0.5
-            }
-        });
     }
 
     render() {
