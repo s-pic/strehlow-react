@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { wait } from '~/util/async';
 import { media } from '~/styles/Utils';
 
-
 const MapWrapper = styled.div`
     height: 100%;
 
