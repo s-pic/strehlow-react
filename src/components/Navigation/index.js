@@ -136,7 +136,7 @@ class NavBar extends Component {
             {title}
           </StyledNavBarBrand>
         )}
-        <StyledNavbarToggler onClick={toggleNavBarCollapsed} />
+        <StyledNavbarToggler onClick={toggleNavBarCollapsed} className={smallScreen ? 'wiggle' : ''} />
         <Collapse isOpen={navBarCollapsed} navbar>
           <StyledNav>
             {entries.map(entry => (
