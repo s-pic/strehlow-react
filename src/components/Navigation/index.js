@@ -145,7 +145,7 @@ class NavBar extends Component {
                   tag={Link}
                   to={entry.route}
                   className={`${location.pathname === entry.route ? 'active' : ''} ${hasDarkBg ? 'has-dark-bg' : ''}`}
-                  onClick={smallScreen && toggleNavBarCollapsed}
+                  onClick={smallScreen ? toggleNavBarCollapsed : () => {}}
                 >
                   {entry.label}
                 </StyledNavLink>
