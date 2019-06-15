@@ -27,7 +27,7 @@ const GridWrapper = styled.div`
     max-width: 980px;   
     align-items: center;
     justify-items: center;
-    grid-template-rows: 200px auto 1fr 100px; 
+    grid-template-rows: 200px 200px 1fr 100px; 
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 48px;
   `}
@@ -72,7 +72,7 @@ const Topic = styled.h3`
   `}
 `;
 
-const InfoText = styled.p`
+const InfoSection = styled.div`
   align-self: flex-start;
   margin-bottom: 3em;
 
@@ -113,11 +113,6 @@ const ContactLink = styled.a`
   }
 `;
 
-const StyledMapRouterLink = styled(FlatRouterLink)`
-  margin-top: 2em;
-`;
-
-
 const Contact = ({
  heading, footerText, phone, mail, authorContacts, adressText
 }) => (
@@ -127,38 +122,46 @@ const Contact = ({
 
       <Icon><MapPin /></Icon>
       <Topic>Adresse</Topic>
-      <InfoText>
+      <InfoSection>
 
         <strong>
           {adressText
           .split(', ')
-          .join('\n')
-          // FIXME: linebreak won't render
+          .map((part, index) => (
+            // since it is a static array, using index is fine
+            // eslint-disable-next-line react/no-array-index-key
+            <span key={index}>
+              {part}
+              <br />
+            </span>
+          ))
           }
         </strong>
 
-        <StyledMapRouterLink to={config.nav.Anreise}>Auf der Karte ansehen</StyledMapRouterLink>
+        <FlatRouterLink to={config.nav.Anreise}>Auf der Karte ansehen</FlatRouterLink>
 
-      </InfoText>
+      </InfoSection>
 
       <Icon><Phone /></Icon>
       <Topic>Telefon</Topic>
-      <InfoText>
+      <InfoSection>
+        <p>
         Ihr Erreicht uns unter
-        <br />
+        </p>
         <a href={`tel:${phone}`}>{phone}</a>
-      </InfoText>
+      </InfoSection>
 
       <Icon><Mail /></Icon>
       <Topic>E-Mail</Topic>
-      <InfoText>
+      <InfoSection>
+        <p>
       Schreibt uns!
-        <br />
-        <a href={`mailto:${authorContacts.mail}`} target="_blank">
+        </p>
+        <a href={`mailto:${authorContacts.mail}`}>
           {mail}
         </a>
 
-      </InfoText>
+      </InfoSection>
 
       <Footer>
         <p>{footerText}</p>

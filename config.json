@@ -39,7 +39,8 @@
     "lightGreen": "#B2C951",
     "fullGreen": "#304D1D",
     "steelBlue": "#516D62",
-    "skyBlue": "#7C98A4"
+    "skyBlue": "#7C98A4",
+    "linkBlue": "#034fa0"
   },
   "texts": {
     "Home": {

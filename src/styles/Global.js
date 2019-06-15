@@ -26,6 +26,10 @@ export default createGlobalStyle`
     background-color: black;
     overflow:hidden;
   }
+
+  a {
+    color: ${config.colors.linkBlue}
+  }
   
    #root {
       height: 100%;

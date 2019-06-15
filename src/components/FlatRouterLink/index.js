@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const StyledButton = styled(Link)`
     color: ${config.colors.darkGrey};
     background-color: transparent;
+    border-radius: 20px;
     outline:0;
     border: 2px solid #7f8c8d;
     transition: background-color 0.3s ease;
@@ -15,7 +16,9 @@ const StyledButton = styled(Link)`
     text-align: center;
     outline-color: rgb(255, 255, 255);
     font-weight: 400;
-    display: inline-block;
+    display: block;
+    margin: 1em;
+    
 
     &&:hover {
       background-color: white;
