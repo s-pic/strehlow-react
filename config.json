@@ -19,10 +19,23 @@
   "map": {
     "tkn": "pk.eyJ1IjoiZ2VvbWMiLCJhIjoiY2p3dDlzaWIzMDN0cDRhcGs3a2doNXg5bCJ9.Ke7vSP8PjUihzEThAWrvcA",
     "initialView": {
-      "center": [13.813881713663704, 53.22377145277434],
-      "zoom": 8
+      "center": [13.813881, 53.223771],
+      "zoom": 9.5
     },
-    "markerPosition": [13.814769, 53.223286]
+    "strehlowMarkerPosition": [13.814769, 53.223286],
+    "station": {
+      "longLat": [13.884544, 53.223771],
+      "name": "Bhf Seehausen",
+      "connections": [
+        "der RB62 (Prenzlau - Angermünde)",
+        "der RE3 (Stralsund - Berlin)"
+      ],
+      "vbbButton": {
+        "width": 200,
+        "height": 65,
+        "src": "https://www.vbb.de/anreisebutton/embed?direction_generator%5Bcolor%5D=red&direction_generator%5Bsize%5D=big&direction_generator%5BS%5D=S%2BU+Berlin+Hauptbahnhof&direction_generator%5BREQ0JourneyStopsSID%5D=A%3D1%40O%3DS%2BU+Berlin+Hauptbahnhof%40X%3D13368928%40Y%3D52525850%40U%3D86%40L%3D900003201%40B%3D1%40V%3D3.9%2C%40p%3D1560423889%40&direction_generator%5BZ%5D=Seehausen+(UM)%2C+Bahnhof&direction_generator%5BREQ0JourneyStopsZID%5D=A%3D1%40O%3DSeehausen+(UM)%2C+Bahnhof%40X%3D13884550%40Y%3D53221031%40U%3D86%40L%3D900340055%40B%3D1%40V%3D3.9%2C%40p%3D1560423889%40&direction_generator%5BtimeMode%5D=now&direction_generator%5Btime%5D=19%3A54&direction_generator%5Bdate%5D=15.06.2019"
+      }
+    }
   },
   "nav": {
     "Home": "/home",
