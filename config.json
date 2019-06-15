@@ -4,18 +4,16 @@
     "description": "Unser Hof in Strehlow stellt sich vor",
     "viewport": "width=device-width, initial-scale=1",
     "robots": "noindex,nofollow",
-    "contact": {
-      "adress": "Fam. Schmidt, Vorwerk 12, 17291 Oberuckersee, OT-Strehlow",
-      "phone": "+49162 9023 964",
-      "mail": "gpeterschmidt@gmx.de"
-    },
+    "author": "Sascha Picard"
+  },
+  "contact": {
+    "adress": "Fam. Schmidt, Vorwerk 12, 17291 Oberuckersee, OT-Strehlow",
+    "phone": "+49162 9023 964",
+    "mail": "gpeterschmidt@gmx.de",
     "author": {
-      "name": "Sascha Picard",
-      "contacts": {
-        "github": "https://github.com/geomC",
-        "linkedIn": "https://www.linkedin.com/in/sascha-picard-ba23b9129/",
-        "mail": "sascha.picard@gmail.com"
-      }
+      "github": "https://github.com/geomC",
+      "linkedIn": "https://www.linkedin.com/in/sascha-picard-ba23b9129/",
+      "mail": "sascha.picard@gmail.com"
     }
   },
   "map": {

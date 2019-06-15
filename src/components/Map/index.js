@@ -19,7 +19,7 @@ export default () => {
           <PopupMarker
             map={map}
             position={config.map.markerPosition}
-            popupContent={formatAdress(config.meta.contact.adress)}
+            popupContent={formatAdress(config.contact.adress)}
             onMarkerClick={() => onMarkerClick(map)}
           />
         </Fragment>

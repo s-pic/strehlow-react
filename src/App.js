@@ -83,10 +83,10 @@ class App extends PureComponent {
                   <Contact
                     heading={config.texts.Contact.heading}
                     footerText={`${config.texts.Contact.footerText} ${config.meta.author.name}`}
-                    authorContacts={config.meta.author.contacts}
-                    adressText={config.meta.contact.adress}
-                    phone={config.meta.contact.phone}
-                    mail={config.meta.contact.mail}
+                    authorContacts={config.contact.author}
+                    adressText={config.contact.adress}
+                    phone={config.contact.phone}
+                    mail={config.contact.mail}
                   />
               )}
               />
