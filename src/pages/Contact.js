@@ -6,6 +6,7 @@ import {
  Phone, Mail, MapPin, GitHub, Linkedin
 } from 'react-feather';
 import { media } from '~/styles/Utils';
+import FlatRouterLink from '~/components/FlatRouterLink';
 
 const Wrapper = styled(Main)`
   display: flex;
@@ -112,6 +113,10 @@ const ContactLink = styled.a`
   }
 `;
 
+const StyledMapRouterLink = styled(FlatRouterLink)`
+  margin-top: 2em;
+`;
+
 
 const Contact = ({
  heading, footerText, phone, mail, authorContacts, adressText
@@ -132,6 +137,7 @@ const Contact = ({
           }
         </strong>
 
+        <StyledMapRouterLink to={config.nav.Anreise}>Auf der Karte ansehen</StyledMapRouterLink>
 
       </InfoText>
 
