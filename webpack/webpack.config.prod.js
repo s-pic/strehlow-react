@@ -17,7 +17,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new Webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      SC_DISABLE_SPEEDY: true
     }),
     new MiniCssExtractPlugin({ filename: 'bundle.css' }),
     new Webpack.optimize.ModuleConcatenationPlugin()
