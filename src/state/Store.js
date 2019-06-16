@@ -1,9 +1,13 @@
 import createStore from 'unistore';
 import devtools from 'unistore/devtools';
+import { isFirstVisit } from '~/util/usage';
 
 const initialState = {
     layout: {
       navBarCollapsed: config.layout.navBar.initiallyCollapsed
+    },
+    usage: {
+      isFirstVisit: isFirstVisit()
     }
   };
 

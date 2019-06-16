@@ -4,7 +4,6 @@ import Actions from '~/state/Actions';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import { media, isSmallScreen } from '~/styles/Utils';
 import {
   Collapse,
   Navbar,
@@ -14,6 +13,7 @@ import {
   NavLink,
   NavbarBrand
 } from 'reactstrap';
+import { media, isSmallScreen } from '~/styles/Utils';
 
 
 const StyledNavbar = styled(Navbar)`
@@ -124,6 +124,8 @@ class NavBar extends Component {
     const { navBarCollapsed } = layout;
 
     const smallScreen = isSmallScreen();
+    const { isFirstVisit } = this.props.usage;
+
     return (
       <StyledNavbar
         light
@@ -140,7 +142,7 @@ class NavBar extends Component {
             {title}
           </StyledNavBarBrand>
         )}
-        <StyledNavbarToggler onClick={toggleNavBarCollapsed} className={smallScreen ? 'wiggle' : ''} />
+        <StyledNavbarToggler onClick={toggleNavBarCollapsed} className={smallScreen && isFirstVisit ? 'wiggle' : ''} />
         <Collapse isOpen={navBarCollapsed} navbar>
           <StyledNav>
             {entries.map(entry => (
