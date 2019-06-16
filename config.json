@@ -19,8 +19,13 @@
   "map": {
     "tkn": "pk.eyJ1IjoiZ2VvbWMiLCJhIjoiY2p3dDlzaWIzMDN0cDRhcGs3a2doNXg5bCJ9.Ke7vSP8PjUihzEThAWrvcA",
     "initialView": {
-      "center": [13.813881, 53.223771],
+      "center": [13.814769, 53.223286],
       "zoom": 9.5
+    },
+    "initialEaseZoom": {
+      "delay": 4000,
+      "zoom": 15,
+      "duration": 20000 
     },
     "strehlowMarkerPosition": [13.814769, 53.223286],
     "station": {

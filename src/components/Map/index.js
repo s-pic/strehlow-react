@@ -15,7 +15,7 @@ export default () => {
   });
 
   return (
-    <Map>
+    <Map initialView={config.map.initialView} initialEaseZoom={config.map.initialEaseZoom}>
       {map => (
         <Fragment>
           <LayerSwitcher map={map} />

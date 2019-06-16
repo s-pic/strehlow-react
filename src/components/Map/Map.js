@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'unistore/react';
+import PropTypes from 'prop-types';
 import Actions from '~/state/Actions';
 import mapboxgl, { NavigationControl } from 'mapbox-gl';
 import styled from 'styled-components';
@@ -26,8 +27,32 @@ class Map extends PureComponent {
         };
     }
 
+    static propTypes = {
+        initialView: PropTypes.shape({
+            zoom: PropTypes.number,
+            center: PropTypes.arrayOf(PropTypes.number).isRequired
+        }),
+        initialEaseZoom: PropTypes.shape({
+            delay: PropTypes.number,
+            zoom: PropTypes.number,
+            duration: PropTypes.number
+        })
+    }
+
+    static defaultProps = {
+        initialView: {
+            zoom: 15
+        },
+        initialEaseZoom: {
+            delay: 4000,
+            zoom: 15,
+            duration: 20000
+        }
+    }
+
     componentDidMount() {
-        const { zoom, center } = config.map.initialView;
+        const { initialView, initialEaseZoom } = this.props;
+        const { zoom, center } = initialView;
 
         this.map = new mapboxgl.Map({
             container: this.mapContainer,
@@ -35,6 +60,11 @@ class Map extends PureComponent {
             zoom,
             center
         });
+        if (initialEaseZoom) {
+            this.map.on('style.load', () => {
+                wait(4000).then(() => this.map.easeTo({ zoom: 15, center, duration: 20000 }));
+            });
+        }
 
         // keep map object in global scope during dev
         if (process.env.NODE_ENV === 'development') {
