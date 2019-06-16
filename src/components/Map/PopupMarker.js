@@ -4,21 +4,30 @@ import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl';
 
 const Marker = styled.div`
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 1px solid white;
-    box-shadow: 0px 6px 4px -1px rgba(54,54,54,0.8);
-`;
+            background-size: cover;
+            border-radius: 50%;
+            cursor: pointer;
+        `;
 
 class PopupMarker extends PureComponent {
     static propTypes = {
         position: PropTypes.arrayOf(PropTypes.number).isRequired,
         popupContent: PropTypes.instanceOf(Element).isRequired,
         onMarkerClick: PropTypes.func.isRequired,
-        markerImageSrc: PropTypes.string.isRequired
+        markerImageSrc: PropTypes.string.isRequired,
+        markerStyle: PropTypes.shape({
+            scale: PropTypes.number,
+            border: PropTypes.string,
+            dropShadow: PropTypes.bool
+        })
+    }
+
+    static defaultProps = {
+        markerStyle: {
+            scale: 1,
+            border: '1px solid white',
+            dropShadow: true
+        }
     }
 
     componentDidMount() {
@@ -50,8 +59,21 @@ class PopupMarker extends PureComponent {
     }
 
     render() {
+        const styleCfg = this.props.markerStyle;
+
+        const style = {
+            backgroundImage: `url(${this.props.markerImageSrc})`,
+            width: `${50 * styleCfg.scale}px`,
+            height: `${50 * styleCfg.scale}px`,
+            border: styleCfg.border,
+            boxShadow: styleCfg.dropShadow ? '0px 6px 4px -1px rgba(54,54,54,0.8)' : ''
+        };
+
         return (
-          <Marker ref={this.registerMarkerRef} style={{ backgroundImage: `url(${this.props.markerImageSrc})` }} />
+          <Marker
+            ref={this.registerMarkerRef}
+            style={style}
+          />
         );
     }
 }
