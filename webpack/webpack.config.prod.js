@@ -19,7 +19,7 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-//    new MiniCssExtractPlugin({ filename: 'bundle.css' }),
+    new MiniCssExtractPlugin({ filename: 'bundle.css' }),
     new Webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
