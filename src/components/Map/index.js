@@ -32,7 +32,7 @@ export default () => {
             onMarkerClick={() => zoomToMarker({ map, position: config.map.station.longLat })}
             popupContent={getSeehausenMarkerPopupContent()}
             markerImageSrc={trainIcon}
-            markerStyle={{ scale: 0.5, dropShadow: false }}
+            markerStyle={{ scale: 0.5, dropShadow: true, border: `1px solid ${config.colors.black}` }}
           />
           <GeoJsonOverlay
             map={map}
