@@ -82,7 +82,7 @@ class App extends PureComponent {
                 render={() => (
                   <Contact
                     heading={config.texts.Contact.heading}
-                    footerText={`${config.texts.Contact.footerText} ${config.meta.author.name}`}
+                    footerText={`${config.texts.Contact.footerText} ${config.meta.author}`}
                     authorContacts={config.contact.author}
                     adressText={config.contact.adress}
                     phone={config.contact.phone}
