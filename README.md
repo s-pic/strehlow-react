@@ -1,4 +1,4 @@
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys) [![Greenkeeper badge](https://badges.greenkeeper.io/geomC/strehlow-react.svg)](https://greenkeeper.io/)
 
 # About
 This is hobby project that aims to establish a website for peers of mine. 
@@ -40,12 +40,8 @@ $ npm run build
 ## CI/CD
 
 [Netlfiy](https://www.netlify.com) is used for continious deployments.
-Production builds can be viewed at https://strehlow-uckermark.com,
-dev builds at https://development.strehlow-uckermark.com.
+Production builds can be viewed at https://strehlow-uckermark.com.
 
-### Netlfiy deploy status
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys) [![Greenkeeper badge](https://badges.greenkeeper.io/geomC/strehlow-react.svg)](https://greenkeeper.io/)
 
 ## Images
 
