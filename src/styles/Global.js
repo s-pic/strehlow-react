@@ -23,7 +23,6 @@ export default createGlobalStyle`
     position: relative;
     font-family: Raleway, Helvetica, sans-serif;
     color: ${config.colors.black};
-    background-color: black;
     overflow:hidden;
   }
 

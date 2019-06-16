@@ -18,14 +18,18 @@ import {
 
 const StyledNavbar = styled(Navbar)`
 
+  background-color: black;
+
   @keyframes blend-in {
     100% {
       transform: translateY(0);
       opacity: 1;
     }
   }
-
+  
+  /* TODO: implement less complicated  */
   &:not(.small-screen) {
+    background-color: transparent;
     opacity: 0;
     animation: 1s blend-in 1s ease-out forwards;
     transform: translateY(-100px);
