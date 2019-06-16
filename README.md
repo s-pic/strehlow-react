@@ -45,7 +45,7 @@ dev builds at https://development.strehlow-uckermark.com.
 
 ### Netlfiy deploy status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys) [![Greenkeeper badge](https://badges.greenkeeper.io/geomC/strehlow-react.svg)](https://greenkeeper.io/)
 
 ## Images
 
