@@ -1,8 +1,8 @@
-import styledNormalize from 'styled-normalize';
+// import styledNormalize from 'styled-normalize';
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  ${styledNormalize}
+ //  ${styledNormalize}
   
   * {
     box-sizing: border-box;
@@ -55,44 +55,43 @@ export default createGlobalStyle`
     transition: opacity 300ms ease-in;
   } 
 
-// animations
+  // animations
 
-.wiggle {
-      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) 1s both;
-      backface-visibility: hidden;
-      perspective: 1000px;
-      
-      @keyframes shake {
-        10%, 90% {
-          transform: translate3d(-1px, 0, 0);
-        }
+  .wiggle {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) 1s both;
+    backface-visibility: hidden;
+    perspective: 1000px;
     
-        20%, 80% {
-          transform: translate3d(2px, 0, 0);
-        }
+    @keyframes shake {
+      10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
   
-        30%, 50%, 70% {
-          transform: translate3d(-4px, 0, 0);
-        }
-  
-        40%, 60% {
-          transform: translate3d(4px, 0, 0);
-        }
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
       }
     }
-
-
-// mapbox popup
-
-.custom-popup {
-
-  .mapboxgl-popup-content {
-    border-radius: 6px;
-    padding: 12px;
   }
 
-  .mapboxgl-popup-close-button {
-    font-size: 14px;
-  }
-} 
+  // mapbox popup
+
+  .custom-popup {
+
+    .mapboxgl-popup-content {
+      border-radius: 6px;
+      padding: 12px;
+    }
+
+    .mapboxgl-popup-close-button {
+      font-size: 14px;
+    }
+  } 
 `;
