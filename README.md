@@ -1,6 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0ffbf542-a750-4fd9-9724-a76fb63097e8/deploy-status)](https://app.netlify.com/sites/strehlow-uckermark/deploys) [![Greenkeeper badge](https://badges.greenkeeper.io/geomC/strehlow-react.svg)](https://greenkeeper.io/)
 
 # About
+The source code behind https://strehlow-uckermark.com.
+
 This is hobby project that aims to establish a website for peers of mine. 
 I started the project using Ember.js which was appealing in the beginning but a hassle 
 when it came to set up a proper component lifecycle for a Map component using third party libraries. 
