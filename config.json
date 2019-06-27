@@ -25,7 +25,7 @@
     "initialEaseZoom": {
       "delay": 5000,
       "zoom": 15,
-      "duration": 20000 
+      "duration": 20000
     },
     "strehlowMarkerPosition": [13.814769, 53.223286],
     "station": {
@@ -77,11 +77,11 @@
   "galleryImages": {
     "activities": [
       {
-        "src": "public/assets/images/activities/trampolin1.JPG",
-        "thumbnail": "public/assets/images/activities/thumbs/trampolin1.jpg",
+        "src": "public/assets/images/activities/entspannen1.JPG",
+        "thumbnail": "public/assets/images/activities/thumbs/entspannen1.jpg",
         "thumbnailWidth": 480,
         "thumbnailHeight": 320,
-        "caption": "Trampolin"
+        "caption": "Die Seele baumeln lassen"
       },
       {
         "src": "public/assets/images/activities/basketball1.JPG",
@@ -119,14 +119,20 @@
         "caption": "Fahrradausflüge in die Umgebung"
       },
       {
-        "src": "public/assets/images/activities/entspannen1.JPG",
-        "thumbnail": "public/assets/images/activities/thumbs/entspannen1.jpg",
+        "src": "public/assets/images/activities/trampolin1.JPG",
+        "thumbnail": "public/assets/images/activities/thumbs/trampolin1.jpg",
         "thumbnailWidth": 480,
         "thumbnailHeight": 320,
-        "caption": "Die Seele baumeln lassen"
+        "caption": "Trampolin"
       }
     ],
     "impressions": [
+      {
+        "src": "public/assets/images/impressions/tisch.jpg",
+        "thumbnail": "public/assets/images/impressions/thumbs/tisch.jpg",
+        "thumbnailWidth": 480,
+        "thumbnailHeight": 320
+      },
       {
         "src": "public/assets/images/impressions/haus.jpg",
         "thumbnail": "public/assets/images/impressions/thumbs/haus.jpg",
@@ -185,12 +191,6 @@
       {
         "src": "public/assets/images/impressions/sunset2.jpg",
         "thumbnail": "public/assets/images/impressions/thumbs/sunset2.jpg",
-        "thumbnailWidth": 480,
-        "thumbnailHeight": 320
-      },
-      {
-        "src": "public/assets/images/impressions/tisch.jpg",
-        "thumbnail": "public/assets/images/impressions/thumbs/tisch.jpg",
         "thumbnailWidth": 480,
         "thumbnailHeight": 320
       },
